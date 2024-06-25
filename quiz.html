@@ -17,36 +17,93 @@
     </nav>
     <main>
         <h1>✨ Test your compability with Lenia ✨</h1>
-        <p>hihihihih</p>
-        <form id="personality-test">
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br><br>
 
-            <label for="question1">1. You find it easy to introduce yourself to other people.</label><br>
-            <input type="radio" id="q1a1" name="question1" value="agree">
-            <label for="q1a1">Agree</label><br>
-            <input type="radio" id="q1a2" name="question1" value="neutral">
-            <label for="q1a2">Neutral</label><br>
-            <input type="radio" id="q1a3" name="question1" value="disagree">
-            <label for="q1a3">Disagree</label><br><br>
+        <h1>This or That?</h1>
+        <form id="personality-test" action="https://formspree.io/f/mgvwwlbe" method="POST">
+            <!-- Textbereich -->
+            <div class="question">
+                <label for="vorname">1. Username *</label><br>
+                <input type="text" id="username" name="username" minlength="1" maxlength="30" required />
+            </div>
 
-            <label for="question2">2. You often get so lost in thoughts that you ignore or forget your surroundings.</label><br>
-            <input type="radio" id="q2a1" name="question2" value="agree">
-            <label for="q2a1">Agree</label><br>
-            <input type="radio" id="q2a2" name="question2" value="neutral">
-            <label for="q2a2">Neutral</label><br>
-            <input type="radio" id="q2a3" name="question2" value="disagree">
-            <label for "q2a3">Disagree</label><br><br>
+            <!-- Zahleneingabe -->
+            <div class="question">
+                <p>2. Wie alt bist du?</p>
+                <input type="number" name="books" min="0" max="100" value="0">
+            </div>
 
-            <label for="question3">3. You feel comfortable just walking up to someone you find interesting and striking up a conversation.</label><br>
-            <input type="radio" id="q3a1" name="question3" value="agree">
-            <label for="q3a1">Agree</label><br>
-            <input type="radio" id="q3a2" name="question3" value="neutral">
-            <label for="q3a2">Neutral</label><br>
-            <input type="radio" id="q3a3" name="question3" value="disagree">
-            <label for="q3a3">Disagree</label><br><br>
+            <!-- Frage 1: Radio Buttons -->
+            <div class="question">
+                <p>3. Matcha oder Kaffee?</p>
+                <label><input type="radio" name="drink" value="Matcha"> Matcha</label>
+                <label><input type="radio" name="drink" value="Kaffee"> Kaffee</label>
+            </div>
 
-            <input type="submit" value="Submit">
+            <div class="question">
+                <p>4. Stadt oder Land?</p>
+                <label><input type="radio" name="landscape" value="Stadt"> Stadt</label>
+                <label><input type="radio" name="landscape" value="Land"> Land</label>
+            </div>
+
+            <div class="question">
+                <p>5. Nördliche oder südliche Länder?</p>
+                <label><input type="radio" name="countries" value="Norden"> Nördliche Länder</label>
+                <label><input type="radio" name="countries" value="Suden"> Südliche Länder</label>
+            </div>
+
+            <div class="question">
+                <p>6. Clean girl oder Baddie?</p>
+                <label><input type="radio" name="aesthetic" value="Clean"> Clean Girl</label>
+                <label><input type="radio" name="asethetic" value="Baddie"> Baddie</label>
+            </div>
+       
+            <div class="question">
+                <p>7. Zuhause bleiben oder ausgehen?</p>
+                <label><input type="radio" name="activity" value="Zuhause"> Zuhause bleiben</label>
+                <label><input type="radio" name="activity" value="Ausgehen"> Ausgehen</label>
+            </div>
+            <div class="question">
+                <p>8. Motorrad oder Fahrrad?</p>
+                <label><input type="radio" name="vehicle" value="Motorrad"> Motorrad</label>
+                <label><input type="radio" name="vehicle" value="Fahrrad"> Fahrrad</label>
+            </div>
+
+            <div class="question">
+                <p>9. Familie oder Freunde?</p>
+                <label><input type="radio" name="persons" value="Familie"> Familie</label>
+                <label><input type="radio" name="persons" value="Freunde"> Freunde</label>
+            </div>
+            <div class="question">
+                <p>10. Pop oder Rap?</p>
+                <label><input type="radio" name="music" value="Pop"> Pop</label>
+                <label><input type="radio" name="Music" value="Rap"> Rap</label>
+            </div>
+
+            <!-- Frage 8: Bereichsauswahl -->
+            <div class="question">
+                <p>12. Wie hoch schätzt du dein Match mit Lenia? (0 = gar nicht, 10 = sehr)</p>
+                <div class="rating">
+                    <input type="range" name="rating" min="0" max="10">
+                    <span>0%</span>
+                    <span>5%</span>
+                    <span>10%</span>
+                </div>
+            </div>
+
+            <!-- Frage 7: Checkboxen -->
+            <div class="question">
+                <p>11. Datenschutz *</p>
+                <label><input type="checkbox" name="datasecurity" value="Ja" required> Ich bin einverstanden dass meine Daten verarbeitet werden :)</label>
+            </div>
+
+            
+            <!-- Textbereich -->
+            <div class="question">
+                <label for="Feedback">13. Bermerkungen </label><br>
+                <input type="text" id="feedback" name="feedback" maxlength="300" />
+            </div>
+
+            <input type="submit" value="Testen">
         </form>
     </main>
 </body>
