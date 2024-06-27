@@ -29,6 +29,7 @@ nav {
         text-decoration: underline;
     }
 }
+
 main {
     background-color: #FFFFFF;
     padding: 20px;
@@ -40,71 +41,61 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 20px;
-    gap: 15px
+    gap: 15px;
+
+    &>img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
 }
 
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-}
+form {
+    &>.question {
+        padding: 20px;
+    }
 
-.pinterest-item:hover {
-    transform: scale(1.05);
-}
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"],
+    input[type="range"],
+    input[type="submit"],
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        font-size: 16px;
+    }
 
+    input[type="radio"], 
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
 
+    p {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+}   
 
-.question {
-    margin-bottom: 40px;
-}
-
-p {
-    font-weight: bold;
-    color: #333;
-}
-
-label {
+label:last-of-type {
     margin-left: 20px;
+
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"],
-input[type="time"],
-input[type="range"],
-input[type="submit"],
-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
+footer {
+    margin-top: 5%;
+    text-align: center;
+    font-size: 12px;
 
-input[type="radio"], 
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.rating {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 200px;
-    margin: 10px 0;
-}
-
-button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
+    &>.mail-icon {
+        width: 52px;
+        padding: 2px;
+    }
+    
 }

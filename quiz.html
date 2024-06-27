@@ -3,11 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is an aesthetic website for my wonderful friend called Lenia. On this page you can test your comptability with her. ">
+    <meta name="description" content="This is an aesthetic website for my wonderful friend called Lenia. On this page you can test your compatibility with her. ">
     <meta name="keywords" content="website for Lenia">
     <meta name="author" content="Célia Dominé">
     <title>Lenia</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('personality-test');
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                let score = 0;
+
+                // Check each radio button group for the correct answer
+                const correctAnswers = {
+                    'drink': 'Matcha',
+                    'landscape': 'Land',
+                    'countries': 'Norden',
+                    'aesthetic': 'Clean',
+                    'activity': 'Ausgehen',
+                    'vehicle': 'Motorrad',
+                    'persons': 'Familie',
+                    'music': 'Rap',
+                    'food': 'Pizza',
+                    'media': 'Text'
+                };
+
+                for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+                    const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                    if (selectedOption && selectedOption.value === correctAnswer) {
+                        score += 10;
+                    }
+                }
+
+                alert(`Your compatibility score with Lenia is ${score}%.`);
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -16,7 +49,7 @@
         <a tabindex="0" class="selected">Quiz</a>
     </nav>
     <main>
-        <h1>✨ Test your compability with Lenia ✨</h1>
+        <h1>✨ Test your compatibility with Lenia ✨</h1>
 
         <h1>This or That?</h1>
         <form id="personality-test" action="https://formspree.io/f/mgvwwlbe" method="POST">
@@ -29,7 +62,7 @@
             <!-- Zahleneingabe -->
             <div class="question">
                 <p>2. Wie alt bist du?</p>
-                <input type="number" name="books" min="0" max="100" value="0">
+                <input type="number" name="age" min="0" max="100" value="0">
             </div>
 
             <!-- Frage 1: Radio Buttons -->
@@ -54,9 +87,9 @@
             <div class="question">
                 <p>6. Clean girl oder Baddie?</p>
                 <label><input type="radio" name="aesthetic" value="Clean"> Clean Girl</label>
-                <label><input type="radio" name="asethetic" value="Baddie"> Baddie</label>
+                <label><input type="radio" name="aesthetic" value="Baddie"> Baddie</label>
             </div>
-       
+
             <div class="question">
                 <p>7. Zuhause bleiben oder ausgehen?</p>
                 <label><input type="radio" name="activity" value="Zuhause"> Zuhause bleiben</label>
@@ -76,12 +109,23 @@
             <div class="question">
                 <p>10. Pop oder Rap?</p>
                 <label><input type="radio" name="music" value="Pop"> Pop</label>
-                <label><input type="radio" name="Music" value="Rap"> Rap</label>
+                <label><input type="radio" name="music" value="Rap"> Rap</label>
+            </div>
+            </div>
+            <div class="question">
+                <p>11. Pasta oder Pizza?</p>
+                <label><input type="radio" name="food" value="Pasta"> Pasta</label>
+                <label><input type="radio" name="food" value="Pizza"> Pizza</label>
+            </div>
+            <div class="question">
+                <p>12. Text- oder Sprachnachricht?</p>
+                <label><input type="radio" name="media" value="Text"> Textnachricht</label>
+                <label><input type="radio" name="media" value="Sprechen"> Sprachnachricht</label>
             </div>
 
             <!-- Frage 8: Bereichsauswahl -->
             <div class="question">
-                <p>12. Wie hoch schätzt du dein Match mit Lenia? (0 = gar nicht, 10 = sehr)</p>
+                <p>13. Wie hoch schätzt du dein Match mit Lenia? (0 = gar nicht, 10 = sehr)</p>
                 <div class="rating">
                     <input type="range" name="rating" min="0" max="10">
                     <span>0%</span>
@@ -92,14 +136,13 @@
 
             <!-- Frage 7: Checkboxen -->
             <div class="question">
-                <p>11. Datenschutz *</p>
+                <p>14. Datenschutz *</p>
                 <label><input type="checkbox" name="datasecurity" value="Ja" required> Ich bin einverstanden dass meine Daten verarbeitet werden :)</label>
             </div>
 
-            
             <!-- Textbereich -->
             <div class="question">
-                <label for="Feedback">13. Bermerkungen </label><br>
+                <label for="Feedback">15. Bemerkungen </label><br>
                 <input type="text" id="feedback" name="feedback" maxlength="300" />
             </div>
 
