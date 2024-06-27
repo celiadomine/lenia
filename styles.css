@@ -1,6 +1,7 @@
 * {
     font-family: Quarto A, Quarto B, Georgia, Times;
     margin: 0;
+    color: #333;
 }
 
 body {
@@ -10,7 +11,8 @@ body {
     background-color: #CBE7D4;
 }
 
-h1 {
+h1, p, iframe, audio {
+    display: block;
     margin: 20px 0;
 }
 
@@ -69,6 +71,7 @@ form {
         border: 1px solid #333;
         border-radius: 5px;
         font-size: 16px;
+        font-weight: normal;
     }
 
     input[type="radio"], 
@@ -76,26 +79,20 @@ form {
         margin-right: 10px;
     }
 
-    p {
-        font-weight: bold;
-        color: #333;
+    label {
+        display: block;
         margin-bottom: 10px;
     }
 }   
 
-label:last-of-type {
-    margin-left: 20px;
-
-}
 
 footer {
     margin-top: 5%;
     text-align: center;
     font-size: 12px;
 
-    &>.mail-icon {
-        width: 52px;
-        padding: 2px;
+    .mail-icon {
+        margin-right: 10px;
     }
     
 }
